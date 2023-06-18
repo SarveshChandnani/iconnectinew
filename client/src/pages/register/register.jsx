@@ -114,33 +114,61 @@ const Register = () => {
 console.log(values);
 const navigate = useNavigate();
 return (
-  <div className='outer'>
-  <Topbar/>
-  <div className='login'>
+//   <div className='outer'>
+//   <Topbar/>
+//   <div className='login'>
   
-  {/* <div className='loginWrapper'> */}
+//   {/* <div className='loginWrapper'> */}
      
-      <div className='loginRight'>
+//       <div className='loginRight'>
 
-          {/* <div className='loginStart'> */}
-       <form >
-          <h3 className='loginTitle'>Company Registration Form</h3>
+//           {/* <div className='loginStart'> */}
+//        <form >
+//           <h3 className='loginTitle'>Company Registration Form</h3>
 
-      {
-        inputs.map((input)=>
-          <FormInput key ={input.id}  {...input} value = {values[input.name]} onChange = {onChange}/>
-        )
-      }
+//       {
+//         inputs.map((input)=>
+//           <FormInput key ={input.id}  {...input} value = {values[input.name]} onChange = {onChange}/>
+//         )
+//       }
       
 
 
-      <button className='loginRegisterButton' onClick={postData}>Create a account</button>
-      </form>
-          </div>
-      {/* </div> */}
-  </div>
+//       <button className='loginRegisterButton' onClick={postData}>Create a account</button>
+//       </form>
+//           </div>
+//       {/* </div> */}
+//   </div>
+
+//     </div>
+<div className='registerouter'>
+<Topbar/>
+<div className='register'>
+
+{/* <div className='registerWrapper'> */}
+   
+    <div className='registerRight'>
+
+        {/* <div className='loginStart'> */}
+     <form >
+        <h3 className='registerTitle'>Company Registration Form</h3>
+
+    {
+      inputs.map((input)=>
+        <FormInput key ={input.id}  {...input} value = {values[input.name]} onChange = {onChange}/>
+      )
+    }
+    
+
+
+    <button className='RegisterButton' onClick={postData}>Create a account</button>
+    </form>
+        </div>
+    {/* </div> */}
+</div>
 
     </div>
+
   )
 }
 

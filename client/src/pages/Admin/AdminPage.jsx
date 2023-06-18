@@ -173,11 +173,10 @@ useEffect(() => {
     <table className='styled-table'>
         <thead>
         <tr>
-            <th>Name</th>
+            <th>SPOC Email</th>
             <th>College Name</th>
             <th>College Address</th>
             <th>SPOC Name</th>
-            <th>SPOC Email</th>
             <th>SPOC Phone</th>
             <th>Colleger Registration ID</th>
             <th>Degree Offered</th>
@@ -188,16 +187,15 @@ useEffect(() => {
         {collegeData.map(college => {
             return(
                 <tr id={college._id}>
-                    <td>{college.username}</td>
+                    <td>{college.collegespocemail}</td>
                     <td>{college.collegename}</td>
                     <td>{college.collegeaddress}</td>
                     <td>{college.collegespocname}</td>
-                    <td>{college.collegespocemail}</td>
                     <td>{college.collegespocphone}</td>
                     <td>{college.collegeregid}</td>
                     <td>{college.degreeoffered}</td>
                     <td>
-                    <FontAwesomeIcon icon={faTrash} onClick={()=> deleteCollege(college.username , college._id)} />
+                    <FontAwesomeIcon icon={faTrash} onClick={()=> deleteCollege(college.collegespocemail , college._id)} />
                     
                     </td>
                 </tr>

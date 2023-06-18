@@ -19,15 +19,14 @@ const CollegeRegister = () => {
 
   const inputs = [
     {
-      id :1,
-      name: "username",
-      type : "text",
-      
-      errorMessage : "Username should be of at least 3 letters and shouldn't include any special character!",
-      required: true,
-      pattern: "^[A-Za-z0-9]{3-}$",
-      label:"Username",
-    },
+        id :1,
+        name: "collegespocemail",
+        type : "email",
+        
+        errorMessage : "Not a valid email",
+        required: true,
+        label:"College SPOC Email"
+      },
     {
       id :2,
       name: "password",
@@ -76,17 +75,9 @@ const CollegeRegister = () => {
         required: true,
         label:"College SPOC name"
       },
+    
     {
       id :7,
-      name: "collegespocemail",
-      type : "email",
-      
-      errorMessage : "Not a valid email",
-      required: true,
-      label:"College SPOC Email"
-    },
-    {
-      id :8,
       name: "collegespocphone",
       type : "text",
       
@@ -96,7 +87,7 @@ const CollegeRegister = () => {
       label:"College SPOC phone"
     },
     {
-        id :9,
+        id :8,
         name: "collegeregid",
         type : "text",
         
@@ -105,7 +96,7 @@ const CollegeRegister = () => {
         label:"College Registration ID"
       },
       {
-        id :10,
+        id :19,
         name: "degreeoffered",
         type : "text",
        
@@ -121,15 +112,15 @@ const CollegeRegister = () => {
 
   const postData =async (e)=>{
      e.preventDefault();
-     const {username , password , confirmPassword , collegename,collegeaddress,collegespocname ,collegespocemail , collegespocphone,collegeregid,degreeoffered} = values;
-     console.log(username);
+     const {collegespocemail , password , confirmPassword , collegename,collegeaddress,collegespocname , collegespocphone,collegeregid,degreeoffered} = values;
+     
      const res = await fetch('/collegesignup', {
         method : "POST",
         headers : {
           "Content-Type" : "application/json"
         },
         body: JSON.stringify({
-            username , password , confirmPassword , collegename,collegeaddress,collegespocname ,collegespocemail , collegespocphone,collegeregid,degreeoffered
+            collegespocemail , password , confirmPassword , collegename,collegeaddress,collegespocname , collegespocphone,collegeregid,degreeoffered
         })
      });
 

@@ -1,4 +1,4 @@
-.outer{
+.registerouter{
     width : 100vw;
     height: 100vh;
     
@@ -7,11 +7,9 @@
 justify-content: center;
 background-color: rgb(240, 255, 247);
 display: inline-block;
-
 }
 
-.login{
-    
+.register{
     width : 100vw;
     height: 100vh;
     
@@ -22,7 +20,7 @@ justify-content: center;
 display: inline-block;
 }
 
-/* .loginWrapper{
+/* .registerWrapper{
     width: 70%;
     height: 70%;
     background-color: yellow;
@@ -45,20 +43,20 @@ form{
   
 }
 
-.loginRight{
+.registerRight{
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 60px;
-    margin-left: 25%;
+    margin-left: 28%;
     background-color: aliceblue;
     border-radius: 5px;
     margin-right: 25%;
 
 } 
 
-.loginTitle{
+.registerTitle{
    font-size: 50px;
    font-weight: 800;
    color: #3da65c;
@@ -66,10 +64,10 @@ form{
    margin-left: 10%;
 }
 
-.loginDes{
+.registerDes{
     font-size: 24px ;
 }
-.loginRight{
+.registerRight{
     -webkit-box-shadow: 5px -6px 18px 2px rgba(0,0,0,0.64);
     -moz-box-shadow: 5px -6px 18px 2px rgba(0,0,0,0.64);
     box-shadow: 5px -6px 18px 2px rgba(0,0,0,0.64);
@@ -78,7 +76,7 @@ form{
     display: inline-block;
     
 }
-.loginStart{
+.registerStart{
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -89,8 +87,20 @@ form{
    
 }
 
-.email{
+/* .email{
     /* width: 270px; */
+    /* height: 50px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding-left: 20px;
+    margin: 10px; */
+
+/* }  */
+
+/* .password{
+    width: 270px;
     height: 50px;
     margin-bottom: 5px;
     border-radius: 15px;
@@ -98,20 +108,9 @@ form{
     font-size: 18px;
     padding-left: 20px;
     margin: 10px;
+} */
 
-}
-
-.password{
-    /* width: 270px; */
-    height: 50px;
-    margin-bottom: 5px;
-    border-radius: 15px;
-    border: 1px solid gray;
-    font-size: 18px;
-    padding-left: 20px;
-    margin: 10px;
-}
-.SignInButton{
+/* .SignInButton{
     height: 50px;
     margin-bottom: 5px;
     border-radius: 5px;
@@ -122,7 +121,7 @@ form{
     font-weight: 500;
     cursor: pointer;
     margin: 10px;
-}
+} */
 
 .passwordForgot{
     text-align: center;
@@ -130,7 +129,7 @@ form{
     margin: 10px;
 }
 
-.loginRegisterButton{
+.RegisterButton{
     width: 40%;
     height: 60px;
     margin-bottom: 5px;
@@ -144,4 +143,9 @@ form{
     cursor: pointer;
     margin: 10px;
     margin-left: 29%;
+}
+
+h3{
+    display:block;
+    font-family: 'Times New Roman', Times, serif;
 }

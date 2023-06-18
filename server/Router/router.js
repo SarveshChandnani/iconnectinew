@@ -88,26 +88,39 @@ router.post('/signup' , async (req ,res )=>{
 router.post('/signin' , async (req ,res) =>{
   
   try{
-    const {companyspocemail , password} = req.body;
+    const {email , password} = req.body;
     console.log(password);
-    console.log(companyspocemail);
+    console.log(email);
+    
   
- if(!companyspocemail || !password){
+ if(!email || !password){
   return res.status(422).json({error : "Please Fill the fields"});
  }
-    const userExist = await User.findOne({companyspocemail : companyspocemail});
-     
-     if(!userExist){
-      return res.status(422).json({message : "Invalid Credentials"});
-    }else{
+    const userExist = await User.findOne({companyspocemail : email});
+    const collegeUser = await College.findOne({collegespocemail : email});
+   console.log(userExist);
+   console.log(collegeUser);
+   
+    if(userExist && !collegeUser){
       const isMatch = await bcrypt.compare(password , userExist.password);
       if(isMatch){
-        return res.status(201).json({message : "User signed in"});
+        return res.status(201).json({message : "company"});
         }else{
         return  res.status(422).json({message : "Invalid Credentials"});
         }
+    }else if(!userExist && collegeUser){
+      const isMatch = await bcrypt.compare(password , collegeUser.password);
+      if(isMatch){
+        return res.status(201).json({message : "college"});
+        }else{
+        return  res.status(422).json({message : "Invalid Credentials"});
+    }}
+    else {
+      return res.status(422).json({message : "Invalid Credentials"});
+    }
+
      
-     }
+  
   }catch(err){
      console.log(err);
   }
@@ -136,18 +149,18 @@ router.post('/deleteUser', async (req , res)=>{
 router.post('/collegesignup' , async (req ,res )=>{
  
   try{
-    const {username , password , confirmPassword , collegename,collegeaddress,collegespocname ,collegespocemail , collegespocphone,collegeregid,degreeoffered} = req.body;
+    const { collegespocemail ,password , confirmPassword , collegename,collegeaddress,collegespocname , collegespocphone,collegeregid,degreeoffered} = req.body;
     console.log(password)
-    if(!username || !password || !confirmPassword || !collegename || !collegeaddress ||!collegespocemail || !collegespocname || !collegespocphone|| !collegeregid|| !degreeoffered || confirmPassword != password){
+    if( !password || !confirmPassword || !collegename || !collegeaddress ||!collegespocemail || !collegespocname || !collegespocphone|| !collegeregid|| !degreeoffered || confirmPassword != password){
       return res.status(422).json({error : "Please Fill the fields"});
      }
-    const userExists = await College.findOne({username : username});
+    const userExists = await College.findOne({collegespocemail : collegespocemail});
     
     if(userExists){
         return res.status(422).json({error : "User already Exists"});
     }
     else{
-      const user = new College({username , password , confirmPassword , collegename,collegeaddress,collegespocname ,collegespocemail , collegespocphone,collegeregid,degreeoffered});
+      const user = new College({ collegespocemail , password , confirmPassword , collegename,collegeaddress,collegespocname , collegespocphone,collegeregid,degreeoffered});
      
       await user.save();
       console.log(password);

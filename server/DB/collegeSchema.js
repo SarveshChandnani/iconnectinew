@@ -2,13 +2,12 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 const collegeSchema = new mongoose.Schema({
-    username : String,
+    collegespocemail : String,
     password :String,
     confirmPassword: String,
     collegename : String,
     collegeaddress:String,
     collegespocname:String,
-    collegespocemail : String,
     collegespocphone : Number,
     collegeregid:String,
     degreeoffered:String,

@@ -9,7 +9,7 @@ background-color: rgb(240, 255, 247);
 }
 
 .loginWrapper{
-    width: 50%;
+    width: 45%;
     height: 80%;
     display: inline-block;
     align-items: center;
@@ -89,7 +89,7 @@ form{
     margin: 10px;
 }
 
-.RegisterButton{
+.loginRegisterButton{
     width: 150px;
     height: 45px;
     padding: auto;
