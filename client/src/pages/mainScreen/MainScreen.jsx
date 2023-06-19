@@ -10,7 +10,7 @@ const MainScreen = () => {
     <Topbar/>
     <div className='content'> 
         <Sidebar/>
-        <MainContent  />
+        {/* <MainContent  /> */}
     </div>
     </div>
   )
