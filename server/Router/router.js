@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 require('../DB/conn');
 const User = require('../DB/schema');
 const College = require('../DB/collegeSchema');
@@ -88,6 +89,7 @@ router.post('/signup' , async (req ,res )=>{
 router.post('/signin' , async (req ,res) =>{
   
   try{
+    let token;
     const {email , password} = req.body;
     console.log(password);
     console.log(email);
@@ -103,6 +105,13 @@ router.post('/signin' , async (req ,res) =>{
    
     if(userExist && !collegeUser){
       const isMatch = await bcrypt.compare(password , userExist.password);
+       token = await userExist.generateAuthToken();
+      console.log(token);
+      res.cookie("jwtoken" , token , {
+        expires : new Date(Date.now()+ 25892000000),
+        httpOnly: true
+      });
+
       if(isMatch){
         return res.status(201).json({message : "company"});
         }else{
