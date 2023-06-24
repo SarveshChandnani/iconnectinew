@@ -2,10 +2,49 @@ import React, { useEffect , useState } from 'react'
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import './Adminpage.css'
+import { useNavigate } from 'react-router-dom';
 const AdminPage = () => {
+
+
+
+  useEffect(()=>{
+		callMainPage();
+	  },[]);
+	
+	  const callMainPage = async()=>{
+	
+		try {
+		  const res = await fetch('/adminpage',{
+			method: 'GET',
+			headers:{
+			  Accept: "application/json",
+			  "Content-Type" : "application/json"
+			},
+			credentials: "include"
+		  });
+		  const data = await res.json();
+		  console.log(data);
+		  if(!res.status === 200){
+			const error = new Error(res.error);
+			throw error;
+		  }
+		} catch (error) {
+		  console.log(error);
+		  navigate('/AdminLogin');
+		}
+	
+	  }
+ const navigate = useNavigate();
+
   const [data, setData] = useState([]);
   const [collegeData  , setCollegeData] = useState([]);
   const [selectedOption, setSelectedOption] = useState('Companies');
+
+
+
+
+
+
 
 useEffect(() => {
    fetchData();
