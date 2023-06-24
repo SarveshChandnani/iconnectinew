@@ -4,8 +4,10 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('../DB/conn');
 const User = require('../DB/schema');
+const Admin = require('../DB/adminSchema');
 const College = require('../DB/collegeSchema');
 const authenticate = require('../middleware/authenticate');
+const adminauthenticate = require ('../middleware/adminautheticate');
 router.get('/' , (req ,res)=>{
     res.send("Hello router");
 })
@@ -209,6 +211,76 @@ router.post('/collegesignup' , async (req ,res )=>{
 router.get('/mainscreen', authenticate,(req, res) =>{
       
         res.send(req.rootUser);
+});
+
+router.post('/adminsignup' , async (req ,res )=>{
+  try{
+    const {email , password } = req.body;
+    console.log(password)
+  
+      const admin = new Admin({email , password });
+     
+      await admin.save();
+      console.log(password);
+      res.status(201).json({message : "user registered successfully"});
+
+  
+   
+    // if(userRegister){
+    //     res.status(201).json({message : "user registered successfully"});
+    // }else{
+    //     res.status(500).json({error : "Failed to register"});
+    // }
+  }catch (err){
+    console.log(err);}
+  }
+);
+
+router.post('/adminsignin' , async (req ,res) =>{
+  
+  try{
+    let token;
+    const {email , password} = req.body;
+    console.log(password);
+    console.log(email);
+    
+  
+ if(!email || !password){
+  return res.status(422).json({error : "Please Fill the fields"});
+ }
+    const userExist = await Admin.findOne({email : email});
+    
+ 
+   
+    if(userExist ){
+      
+       token = await userExist.generateAuthToken();
+      console.log(token);
+      res.cookie("admin" , token , {
+        expires : new Date(Date.now()+ 25892000000),
+        httpOnly: true
+      });
+
+      if(password === userExist.password){
+        return res.status(201).json({message : "login Successful!!"});
+        }else{
+        return  res.status(422).json({message : "Invalid Credentials"});
+        }
+    }
+    else {
+      return res.status(422).json({message : "Invalid Credentials"});
+    }
+
+     
+  
+  }catch(err){
+     console.log(err);
+  }
+});
+
+router.get('/adminpage', adminauthenticate,(req, res) =>{
+      
+  res.send(req.rootUser);
 });
 
 module.exports = router;
