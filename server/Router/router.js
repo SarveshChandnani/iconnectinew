@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 require('../DB/conn');
 const User = require('../DB/schema');
 const College = require('../DB/collegeSchema');
-
+const authenticate = require('../middleware/authenticate');
 router.get('/' , (req ,res)=>{
     res.send("Hello router");
 })
@@ -205,5 +205,10 @@ router.post('/collegesignup' , async (req ,res )=>{
         console.log(error);
       }
     });
+
+router.get('/mainscreen', authenticate,(req, res) =>{
+      
+        res.send(req.rootUser);
+});
 
 module.exports = router;

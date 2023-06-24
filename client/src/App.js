@@ -3,14 +3,14 @@
 
 
 import React from 'react';
-import Home from './pages/home/home';
+import Home from './Pages/home/home';
 import  {Routes ,Route} from 'react-router-dom';
-import Register from "./pages/register/register";
-import Activation from './pages/Activation/Activation';
-import MainScreen from './pages/mainScreen/MainScreen';
-import AdminLogin from './pages/Admin/AdminLogin';
-import AdminPage from './pages/Admin/AdminPage';
-import CollegeRegister from './pages/collegeRegistration/collegeRegister';
+import Register from "./Pages/register/register";
+import Activation from './Pages/Activation/Activation';
+import MainScreen from './Pages/mainScreen/MainScreen';
+import AdminLogin from './Pages/Admin/AdminLogin';
+import AdminPage from './Pages/Admin/AdminPage';
+import CollegeRegister from './Pages/collegeRegistration/collegeRegister';
 
 
 function App() {

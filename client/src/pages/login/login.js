@@ -31,6 +31,7 @@ const Login = () => {
       required: true,
     },
   ];
+  const navigate = useNavigate();
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -75,7 +76,7 @@ const Login = () => {
   };
 
   console.log(values);
-const navigate = useNavigate();
+
   // return (
   //   <div className='login'>
   //   <div className='loginWrapper'>

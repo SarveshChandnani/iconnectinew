@@ -5,9 +5,12 @@ const app = express();
 const cors = require('cors');
 dotenv.config({path: './config.env'})
 require('./DB/conn');
+const cookieParser = require('cookie-parser');
 app.use(express.json());
+app.use(cookieParser());
 app.use(require('./Router/router'));
 app.use(cors());
+
 const PORT = process.env.PORT;
 
 
