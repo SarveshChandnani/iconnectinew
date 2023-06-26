@@ -8,6 +8,19 @@ const Admin = require('../DB/adminSchema');
 const College = require('../DB/collegeSchema');
 const authenticate = require('../middleware/authenticate');
 const adminauthenticate = require ('../middleware/adminautheticate');
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/images')
+  },
+  filename: function (req, file, cb) {
+   
+    cb(null, Date.now()+'_'+ file.originalname);
+  }
+})
+
+const upload = multer({ storage: storage })
+
 router.get('/' , (req ,res)=>{
     res.send("Hello router");
 })
@@ -36,13 +49,15 @@ router.get('/' , (req ,res)=>{
 //     //  console.log(req.body);
     
 // });
-router.post('/signup' , async (req ,res )=>{
+router.post('/signup' , upload.single('logo'),async (req ,res )=>{
 
     
     
           
  
           try{
+            console.log(req.file);
+            const logo = (req.file)? req.file.filename : null;
             const {companyspocemail , password , confirmPassword , companyname ,companyspocname , companyspocphone} = req.body;
             console.log(password)
             if( !password || !confirmPassword || !companyname || !companyspocemail || !companyspocname || !companyspocphone || confirmPassword != password){
@@ -54,7 +69,7 @@ router.post('/signup' , async (req ,res )=>{
                 return res.status(422).json({error : "User already Exists"});
             }
             else{
-              const user = new User({companyspocemail , password , confirmPassword , companyname ,companyspocname , companyspocphone});
+              const user = new User({companyspocemail , password , confirmPassword , companyname ,companyspocname , companyspocphone , logo});
              
               await user.save();
               console.log(password);
@@ -209,7 +224,7 @@ router.post('/collegesignup' , async (req ,res )=>{
     });
 
 router.get('/mainscreen', authenticate,(req, res) =>{
-      
+        
         res.send(req.rootUser);
 });
 

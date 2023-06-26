@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
     companyname : String,
     companyspocname:String,
     companyspocphone : Number,
+    logo : String,
     tokens: [
         {
             token: {

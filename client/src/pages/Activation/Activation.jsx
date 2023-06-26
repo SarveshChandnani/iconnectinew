@@ -4,6 +4,7 @@ import './activation.css'
 import Navbar from '../../Components/Navbar';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Topbar from '../../Components/Topbar';
 
 function Activation() {
 	useEffect(()=>{
@@ -37,8 +38,8 @@ function Activation() {
 
 	return (
 		<div>
-			{/* <Topbar/> */}
-            <Navbar/>
+			 <Topbar/>
+            
 			
 			<div className='content'>
 			<ProfileActivate/>

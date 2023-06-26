@@ -6,6 +6,7 @@ const cors = require('cors');
 dotenv.config({path: './config.env'})
 require('./DB/conn');
 const cookieParser = require('cookie-parser');
+app.use('/public' , express.static('public'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(require('./Router/router'));
