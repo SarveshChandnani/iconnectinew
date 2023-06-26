@@ -9,7 +9,7 @@ import Topbar from "../../Components/Topbar";
 const Home = () => {
   return (
     <>
-   <Topbar/>
+   <Topbar  toShow = 'false'/>
       <div className="homeContainer">
       
       <TextSlider />

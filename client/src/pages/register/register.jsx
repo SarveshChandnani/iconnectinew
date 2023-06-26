@@ -13,6 +13,7 @@ const Register = () => {
     companyspocname:"",
     companyspocemail : "",
     companyspocphone : "",
+    logo : ""
   });
 
   const inputs = [
@@ -84,18 +85,34 @@ const Register = () => {
     setValues ({...values , [e.target.name]: e.target.value});
   };
 
+  const imageUpload = (e) =>{
+    console.log(e.target.files[0]);
+    setValues ({...values , logo: e.target.files[0]});
+  }
+
   const postData =async (e)=>{
      e.preventDefault();
-     const {companyspocemail , password , confirmPassword , companyname ,companyspocname , companyspocphone} = values;
+     const {companyspocemail , password , confirmPassword , companyname ,companyspocname , companyspocphone } = values;
+    const logo = values.logo;
+     const formData = new FormData();
+     formData.append('companyspocemail', companyspocemail);
+     formData.append('password', password);
+     formData.append('confirmPassword', confirmPassword);
+     formData.append('companyname', companyname);
+     formData.append('companyspocname', companyspocname);
+     formData.append('companyspocphone', companyspocphone);
+     formData.append('logo', values.logo, values.logo.name);
      
      const res = await fetch('/signup', {
         method : "POST",
-        headers : {
-          "Content-Type" : "application/json"
-        },
-        body: JSON.stringify({
-           companyspocemail, password , confirmPassword , companyname ,companyspocname  , companyspocphone
-        })
+        // headers : {
+        //   "Content-Type" : "application/json"
+        // },
+        body: formData
+        // JSON.stringify({
+        //    companyspocemail, password , confirmPassword , companyname ,companyspocname  , companyspocphone ,logo
+          
+        // })
      });
 
      const data = await res.json();
@@ -142,7 +159,7 @@ return (
 
 //     </div>
 <div className='registerouter'>
-<Topbar/>
+<Topbar toShow = 'false' />
 <div className='register'>
 
 {/* <div className='registerWrapper'> */}
@@ -158,6 +175,8 @@ return (
         <FormInput key ={input.id}  {...input} value = {values[input.name]} onChange = {onChange}/>
       )
     }
+
+    <input placeholder='upload your logo' type='file' onChange={imageUpload}/>
     
 
 

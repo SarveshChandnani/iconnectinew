@@ -3,9 +3,9 @@ const User = require('../DB/schema');
 
 
 const Authenticate = async (req,res ,next)=>{
-    console.log(req);
+    
   try {
-    console.log('before');
+    
     const token = req.cookies.jwtoken;
     
     const verifyToken = jwt.verify(token ,process.env.SECRET_KEY);
