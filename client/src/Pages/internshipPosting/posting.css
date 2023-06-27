@@ -1,0 +1,97 @@
+* {
+    margin:0;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+.posting{
+    width : 100vw;
+    height: 100vh;
+    background-color: aquamarine;
+    align-items: center;
+    display: flex;
+   justify-content: center;
+   display: inline-block;
+}
+
+Navbar{
+    margin-top: 0;
+}
+.wrapper{
+    height: 500px;
+    width: 800px;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    border: 2px solid brown;
+    border-radius: 5px;
+    background-color: rgba(248, 141, 141, 0.6);
+    justify-content: space-between ;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.insidewrapper{
+    height: 500px;
+    width: 800px;
+    /* margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%; */
+    
+    border-radius: 5px;
+    background-color: rgba(248, 141, 141, 0.6);
+    justify-content: space-between ;
+    display: flex;
+    flex-direction: row;
+    
+}
+.left-post{
+    /* background-color: yellow; */
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    
+}
+.right-post{
+    /* background-color: yellow; */
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+.fields {
+    flex:1;  
+    display:flex;
+    flex-direction:row; 
+    margin-bottom:20px;
+    margin: 25px;
+}
+.fields input{
+    width: 40%;
+    height: 30px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding-left: 20px;
+    margin: 10px;
+    margin-left: 19%;
+    
+}
+
+.fields select{
+    width:40%;
+    height: 34px;
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 18px; 
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+}
