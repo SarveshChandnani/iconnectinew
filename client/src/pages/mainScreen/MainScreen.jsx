@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import MainContent from './MainContent/MainContent'
 import "./mainScreen.css"
@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 
 
 const MainScreen = () => {
+  const [deactivate , setDeactivate] = useState("");
+
   useEffect(()=>{
 		callMainPage();
 	  },[]);
@@ -24,7 +26,8 @@ const MainScreen = () => {
 			credentials: "include"
 		  });
 		  const data = await res.json();
-		  console.log(data);
+		  console.log(data.deactivate);
+		  setDeactivate(data.deactivate);
 		  if(!res.status === 200){
 			const error = new Error(res.error);
 			throw error;
@@ -36,13 +39,13 @@ const MainScreen = () => {
 	
 	  }
 	  const navigate = useNavigate();
- 
+    console.log(deactivate);
 
   return (
     <div className='outer'>
     <Topbar/>
     <div className='content'> 
-        <Sidebar/>
+        <Sidebar deactivate = {deactivate}/>
         {/* <MainContent  /> */}
     </div>
     </div>

@@ -149,3 +149,15 @@ h3{
     display:block;
     font-family: 'Times New Roman', Times, serif;
 }
+
+.registerRight input{
+    width: 60%;
+    height: 30px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding-left: 20px;
+    margin: 10px;
+    margin-left: 19%;
+}

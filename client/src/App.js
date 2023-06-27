@@ -11,6 +11,7 @@ import MainScreen from './Pages/mainScreen/MainScreen';
 import AdminLogin from './Pages/Admin/AdminLogin';
 import AdminPage from './Pages/Admin/AdminPage';
 import CollegeRegister from './Pages/collegeRegistration/collegeRegister';
+import Posting from './Pages/internshipPosting/posting';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path='/AdminLogin' element={<AdminLogin/>}> </Route>
 			<Route path='/AdminLogin/AdminPage' element={<AdminPage/>}> </Route>
 			<Route path='/CollegeRegister' element={<CollegeRegister/>}> </Route>
+			<Route path='/InternshipPosting' element={<Posting/>}> </Route>
 		</Routes >
 		
 		</div>

@@ -1,24 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 * {
-    margin:0;
-    font-family: "Roboto", sans-serif;
-    box-sizing: border-box;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 
-.activation{
-    height:100vh;
-    /* background-image: 
-  url(
-"https://img.freepik.com/free-photo/flat-lay-office-desk-assortment-with-copy-space_23-2148707962.jpg"); */
-background-repeat: no-repeat;
-    background-size: cover;
-    /* opacity: 0.5; */
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    
+.activation {
+  height: 100vh;
 
+  /* opacity: 0.5; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 450px;
 }
 
 /* .activation::before{
@@ -30,16 +25,16 @@ background-repeat: no-repeat;
   opacity: 0.5;
 } */
 
-.signup-form  {
-    flex:1;
-    max-width:600px;
-    /* width: 200px; */
-    border-radius: 10px;
-    background-color: #EFF0F1;
-    border: 1px solid #999;
-    margin-top: 10%;
-    margin-bottom:  auto;
-  }
+.signup-form {
+  flex: 1;
+  /* max-width:600px; */
+  width: 650px;
+  border-radius: 10px;
+  background-color: #eff0f1;
+  border: 1px solid #999;
+  margin-top: 10%;
+  margin-bottom: auto;
+}
 /* .wrapper{
   border: 1px solid black;
   padding: 2rem 2rem;
@@ -51,26 +46,25 @@ background-repeat: no-repeat;
 } */
 
 .form-header {
-    padding:15px 0;
-    border-bottom:1px solid #cccccc;
-    height: 100px;
-    opacity: 0.5;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image:url(
-        "https://static.vecteezy.com/system/resources/thumbnails/007/077/261/small/concept-of-online-payment-with-credit-card-with-smart-phone-laptop-computer-on-office-desk-on-clean-bright-marble-table-background-top-view-flat-lay-photo.jpg");;
+  padding: 15px 0;
+  border-bottom: 1px solid #cccccc;
+  height: 100px;
+  /* opacity: 0.5; */
+  background: url("../collegeRegistration/images/bg_img3.jpg") no-repeat;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
 }
 
 .form-header h1 {
-    font-size: 28px;
-    text-align:center;
-    color:#0e0d0d;
+  font-size: 28px;
+  text-align: center;
+  color: #0e0d0d;
 }
 
 /* .left , .right{
     flex: 1;
     /* align-items: center; */
-    /* border: 1px solid rgb(200, 19, 19);
+/* border: 1px solid rgb(200, 19, 19);
     margin: 10px;
 } */
 /*  */
@@ -80,82 +74,82 @@ background-repeat: no-repeat;
 }  */
 
 .form-body {
-    background:white;
-    padding:5px 10px;
+  background: white;
+  padding: 5px 10px;
 }
 
 .row {
-    display:flex; 
+  display: flex;
 }
-  
+
 .input-group {
-    flex:1;  
-    display:flex;
-    flex-direction:column; 
-    margin:10px 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 5px;
 }
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 500px) {
-    .row{
-      flex-direction:column; 
-    }
+  .row {
+    flex-direction: column;
+  }
 
-    .btn {
-        flex:1;
-    }
+  .btn {
+    flex: 1;
+  }
 }
 
 .form-footer {
-    display:flex;
-    justify-content: flex-end;
-    padding:10px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
 }
 
 .btn {
-    padding:10px 20px;
-    background-color: #3da65c;
-    font-size:17px;
-    border:none;
-    border-radius:5px;
-    color:white;
-    cursor:pointer;
- }
-
- /* INPUT*/
-
- label {
-    color:#3da65c;
-    font-size: 17px;
-    font-weight: 500;
-  }
-
-  input  {
-    width:100%;
-    
-    font-size: 18px;
-    height: 34px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #666;
-    border: 1px solid #d6d6d6;
-    border-radius: 4px;
-    background: white;
-    outline: none;
-    }
-
-select{
-    width:100%;
-    
-    font-size: 18px;
-    height: 34px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #666;
-    border: 1px solid #d6d6d6;
-    border-radius: 4px;
-    background: white;
-    outline: none;
+  padding: 10px 20px;
+  background-color: #3da65c;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
 }
 
+/* INPUT*/
 
+.input-group label {
+  color: #3da65c;
+  font-size: 17px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.input-group input {
+  width: 90%;
+
+  font-size: 18px;
+  height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #666;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  background: white;
+  outline: none;
+}
+
+.input-group select {
+  width: 90%;
+  margin-left: 15px;
+  margin-top: 10px;
+  font-size: 18px;
+  height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #666;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  background: white;
+  outline: none;
+}
