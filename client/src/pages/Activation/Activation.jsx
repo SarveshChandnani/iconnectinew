@@ -36,7 +36,8 @@ function Activation() {
 
   return (
     <div>
-      <Topbar />
+      
+      <Navbar />
 
       <div className="content">
         <ProfileActivate />

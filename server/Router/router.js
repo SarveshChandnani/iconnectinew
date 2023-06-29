@@ -378,9 +378,9 @@ router.post('/activation' , async (req ,res )=>{
   router.post('/posting' , async (req ,res )=>{
  
     try{
-      const {areaofwork , date , duration , stipend,hoursweek,typeofengagement , locationofwork,vacancy} = req.body;
+      const {areaofwork , date , duration , stipend,hoursweek,typeofengagement , locationofwork,vacancy , userID} = req.body;
       console.log(date)
-      if( !areaofwork || !date || !duration ||!hoursweek || !typeofengagement || !locationofwork|| !vacancy){
+      if( !areaofwork || !date || !duration ||!hoursweek || !typeofengagement || !locationofwork|| !vacancy || !userID){
         return res.status(422).json({error : "Please Fill the fields"});
         
        }
@@ -390,7 +390,7 @@ router.post('/activation' , async (req ,res )=>{
       //     return res.status(422).json({error : "User already Exists"});
       // }
        else{
-        const user = new Posting({ areaofwork , date , duration , stipend,hoursweek,typeofengagement , locationofwork,vacancy});
+        const user = new Posting({ areaofwork , date , duration , stipend,hoursweek,typeofengagement , locationofwork,vacancy , userID});
        
         await user.save();
         console.log(date);
@@ -402,5 +402,22 @@ router.post('/activation' , async (req ,res )=>{
       console.log(err);}
     }
     );
+
+    router.post("/allpostings", async (req, res) => {
+      
+      try {
+         
+        const   {userID}  = req.body;
+        console.log(userID);
+
+
+
+        const allUsers = await Posting.find({userID : userID});
+        // console.log(allUsers);
+        res.json(allUsers);
+      } catch (error) {
+        console.log(error);
+      }
+    });
 
 module.exports = router;

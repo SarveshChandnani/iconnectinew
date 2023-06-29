@@ -8,52 +8,55 @@ import {
   FaCommentAlt,
   FaShoppingBag,
   FaThList,
+  FaSearch,
+  FaLaptopCode
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ children, deactivate }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  console.log(deactivate);
   const menuItem = [
     {
-      path: "/MainScreen/Activation",
+      path: "/MainScreen",
       name: "Dashboard",
       icon: <FaTh />,
       deactivate: { deactivate },
     },
     {
-      path: "/about",
-      name: "About",
+      path: "/MainScreen/Activation",
+      name: "Activate Profile",
       icon: <FaUserAlt />,
       deactivate: { deactivate },
     },
     {
-      path: "/analytics",
-      name: "Analytics",
+      path: "/internshipPosting",
+      name: "Post Internships",
       icon: <FaRegChartBar />,
       deactivate: { deactivate },
     },
     {
-      path: "/comment",
-      name: "Comment",
-      icon: <FaCommentAlt />,
+      path: "/search",
+      name: "Search Candidates",
+      icon: <FaSearch />,
       deactivate: { deactivate },
     },
     {
       path: "/product",
-      name: "Product",
+      name: "View active profiles",
       icon: <FaShoppingBag />,
       deactivate: { deactivate },
     },
     {
       path: "/productList",
-      name: "Product List",
-      icon: <FaThList />,
+      name: "Reset Password",
+      icon: <FaLaptopCode />,
       deactivate: { deactivate },
     },
   ];
   const errorMessage = "Sorry Your Account has been deactivated";
-  console.log(menuItem[0].deactivate.deactivate);
+  console.log(menuItem[0].deactivate);
   return (
     <div className="container">
       <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">

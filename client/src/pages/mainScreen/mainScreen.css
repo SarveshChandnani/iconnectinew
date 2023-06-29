@@ -3,6 +3,18 @@
     padding:0;
     text-decoration: none;
 }
+
+.outer{
+    overflow: hidden;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+
+/* sidebar css */
 .container{
     display:flex;
 }

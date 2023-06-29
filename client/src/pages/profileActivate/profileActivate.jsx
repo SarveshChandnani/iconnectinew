@@ -185,6 +185,9 @@ const ProfileActivate = () => {
                 id="industrytype"
                 onChange={onChange}
               >
+                <option value="" selected>
+                  --select--
+                </option>
                 <option value="pvt">pvt</option>
                 <option value="Govt">Govt</option>
                 <option value="Public">Public</option>
@@ -201,6 +204,9 @@ const ProfileActivate = () => {
                 id="areaofwork"
                 onChange={onChange}
               >
+                <option value="" selected>
+                  --select--
+                </option>
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
                 <option value="mercedes">Mercedes</option>
@@ -251,6 +257,9 @@ const ProfileActivate = () => {
                 id="locationofwork"
                 onChange={onChange}
               >
+                <option value="" selected>
+                  --select--
+                </option>
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
                 <option value="mercedes">Mercedes</option>
@@ -271,8 +280,19 @@ const ProfileActivate = () => {
         </div>
 
         <div class="form-footer">
+          <div className="payment">
+            <select name="modeofpayment" id="payment">
+              <option value="" selected>
+                --Payment Mode--
+              </option>
+              <option value="Net Banking">Net Banking</option>
+              <option value="UPI">UPI</option>
+              <option value="Google Pay">Google Pay</option>
+            </select>
+            <button class="btn">Pay</button>
+          </div>
           <button class="btn" onClick={postData}>
-            Create
+            Activate
           </button>
         </div>
       </form>
