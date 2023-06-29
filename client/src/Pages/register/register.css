@@ -1,15 +1,26 @@
-.login{
+.registerouter{
     width : 100vw;
     height: 100vh;
     
  align-items: center;
  display: flex;
 justify-content: center;
-background-color: white;
+background-color: rgb(240, 255, 247);
 display: inline-block;
 }
 
-/* .loginWrapper{
+.register{
+    width : 100vw;
+    height: 100vh;
+    
+ align-items: center;
+ display: flex;
+justify-content: center;
+
+display: inline-block;
+}
+
+/* .registerWrapper{
     width: 70%;
     height: 70%;
     background-color: yellow;
@@ -32,51 +43,64 @@ form{
   
 }
 
-.loginRight{
+.registerRight{
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 60px;
-    margin-left: 23%;
+    margin-left: 28%;
     background-color: aliceblue;
     border-radius: 5px;
+    margin-right: 25%;
 
 } 
 
-.loginTitle{
+.registerTitle{
    font-size: 50px;
    font-weight: 800;
-   color: #1775ee;
+   color: #3da65c;
    margin-bottom: 10px; 
-   margin-left: 19%;
+   margin-left: 10%;
 }
 
-.loginDes{
+.registerDes{
     font-size: 24px ;
 }
-.loginRight{
+.registerRight{
     -webkit-box-shadow: 5px -6px 18px 2px rgba(0,0,0,0.64);
     -moz-box-shadow: 5px -6px 18px 2px rgba(0,0,0,0.64);
     box-shadow: 5px -6px 18px 2px rgba(0,0,0,0.64);
     border-radius: 10px;
     
     display: inline-block;
-    width: 100%;
+    
 }
-.loginStart{
+.registerStart{
     display: flex;
     flex-direction: column;
     padding: 20px;
     justify-content: space-between;
-    
+    /* background-color: red; */
     display: inline-block;
     
    
 }
 
-.email{
+/* .email{
     /* width: 270px; */
+    /* height: 50px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding-left: 20px;
+    margin: 10px; */
+
+/* }  */
+
+/* .password{
+    width: 270px;
     height: 50px;
     margin-bottom: 5px;
     border-radius: 15px;
@@ -84,20 +108,9 @@ form{
     font-size: 18px;
     padding-left: 20px;
     margin: 10px;
+} */
 
-}
-
-.password{
-    /* width: 270px; */
-    height: 50px;
-    margin-bottom: 5px;
-    border-radius: 15px;
-    border: 1px solid gray;
-    font-size: 18px;
-    padding-left: 20px;
-    margin: 10px;
-}
-.SignInButton{
+/* .SignInButton{
     height: 50px;
     margin-bottom: 5px;
     border-radius: 5px;
@@ -108,7 +121,7 @@ form{
     font-weight: 500;
     cursor: pointer;
     margin: 10px;
-}
+} */
 
 .passwordForgot{
     text-align: center;
@@ -116,17 +129,35 @@ form{
     margin: 10px;
 }
 
-.loginRegisterButton{
+.RegisterButton{
     width: 40%;
     height: 60px;
     margin-bottom: 5px;
     border-radius: 5px;
-    background-color: #224be0;;
+    background-color: #3da65c;
+    color: white;
     border: none;
     font-size: 20px;
-    color: white;
+    
     font-weight: 500;
     cursor: pointer;
     margin: 10px;
     margin-left: 29%;
+}
+
+h3{
+    display:block;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.registerRight input{
+    width: 60%;
+    height: 30px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding-left: 20px;
+    margin: 10px;
+    margin-left: 19%;
 }
