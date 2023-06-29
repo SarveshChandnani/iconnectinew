@@ -7,7 +7,8 @@
 .posting{
     width : 100vw;
     height: 100vh;
-    background-color: aquamarine;
+    background-color: rgb(240, 255, 247);
+   
     align-items: center;
     display: flex;
    justify-content: center;
@@ -23,54 +24,79 @@ Navbar{
     margin-top: 5%;
     margin-left: 25%;
     margin-right: 25%;
-    border: 2px solid brown;
-    border-radius: 5px;
-    background-color: rgba(248, 141, 141, 0.6);
+    border: 2px solid #999;
+    border-radius: 10px;
+    /* background-color:green; */
+    background-color: white;
     justify-content: space-between ;
     display: flex;
     flex-direction: column;
-    
+    /* padding: 50px; */
+  
 
 }
-
+.bottom{
+    padding: 15px 0;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: #eff0f1;
+     
+}
+.internship-header{
+    padding: 15px 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    height: 100px;
+    background-color: #eff0f1; 
+     
+}
+.internship-header h1 {
+    font-size: 28px;
+    text-align: center;
+    color: #0e0d0d;
+  }
 .insidewrapper{
     height: 500px;
     width: 800px;
     /* margin-top: 5%;
-    margin-left: 25%;
-    margin-right: 25%; */
+    margin-left: 25%;*/
+    /* margin-right: 25%;  */
     
-    border-radius: 5px;
-    background-color: rgba(248, 141, 141, 0.6);
+    padding: 5px 10px;
     justify-content: space-between ;
     display: flex;
     flex-direction: row;
+    /* background-color: pink; */
+    
+    max-width: 800px;
     
 }
 .left-post{
     /* background-color: yellow; */
     width: 50%;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
+    border: 1px solid green;
+    
     
 }
+
 .right-post{
     /* background-color: yellow; */
     width: 50%;
     padding: 10px;
-    margin: 10px;
-    
+    margin: 5px;
+    border: 1px solid green;
 }
 
 .fields {
-    flex:1;  
-    display:flex;
-    flex-direction:row; 
-    margin-bottom:20px;
-    margin: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 5px;
 }
 .fields input{
-    width: 40%;
+    width: 50%;
     height: 30px;
     margin-bottom: 5px;
     border-radius: 5px;
@@ -78,12 +104,12 @@ Navbar{
     font-size: 18px;
     padding-left: 20px;
     margin: 10px;
-    margin-left: 19%;
+    /* margin-left: 19%; */
     
 }
 
 .fields select{
-    width:40%;
+    width:50%;
     height: 34px;
     margin-left: 15px;
     margin-top: 10px;
@@ -95,3 +121,53 @@ Navbar{
     background: white;
     outline: none;
 }
+
+.fields label {
+    color: #3da65c;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 10px;
+  }
+  
+
+.bottom button{
+    padding: 10px 20px;
+    background-color: #3da65c;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-left: 45%;
+}
+
+@media only screen and (max-width: 900px) {
+    .wrapper {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .insidewrapper {
+      flex-direction: column;
+
+    }
+  
+    .left-post,
+    .right-post {
+      width: 100%;
+    }
+  
+    .fields input,
+    .fields select {
+      width: 100%;
+    }
+  
+    .bottom button {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }

@@ -110,6 +110,7 @@ h2{
 .card-body{
     
     margin: 10px 70px 70px;
+    margin-top: 100px;
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
 
@@ -148,6 +149,15 @@ h2{
 
 .styled-table tr:nth-child(even) {
     background: #F8F8F8;
+}
+
+th{
+    padding: 10px;
+    font-size: 15px;
+}
+
+td{
+    font-size: 100px;
 }
 
 /* Responsive */

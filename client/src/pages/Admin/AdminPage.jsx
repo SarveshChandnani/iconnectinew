@@ -155,7 +155,7 @@ const AdminPage = () => {
                   <th>SPOC Name</th>
                   <th>SPOC Phone</th>
                   <th>Deactivated</th>
-                  <th>Delete</th>
+                  <th>Manage</th>
                 </tr>
               </thead>
               <tbody>

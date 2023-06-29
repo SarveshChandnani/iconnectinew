@@ -9,6 +9,7 @@ const postingSchema = new mongoose.Schema({
     locationofwork : String,
     typeofengagement:String,
     vacancy:Number,
+    userID: String
     
 });
 
